@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Defines the document type and sets the language to English -->
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Sets the character encoding for the document to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Ensures the page is responsive by adjusting the layout based on the screen size -->
+    
+    <!-- Link to RemixIcon CDN for icons used in the website -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    
+    <!-- Link to Swiper CSS for creating the car slider feature -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    
+    <!-- Link to custom stylesheet (styles.css) for styling the website -->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="login" href="login.html">
+
+    
+    <!-- The title of the website that appears in the browser tab -->
+    <title> FAYAS | CAR RENTAL WEB PAGE</title>
+  </head>
+
+  <body>
+    <!-- Header section containing navigation and introduction -->
+    <header>
+      <!-- Navigation bar -->
+      <nav>
+
+        <div class="nav__header">
+          <!-- Logo section -->
+          <div class="nav__logo">
+            <a href="#">RENTAL</a> <!-- Logo link to homepage -->
+          </div>
+          
+          <!-- Button for menu in mobile view -->
+          <div class="nav__menu__btn" id="menu-btn">
+            <i class="ri-menu-line"></i> <!-- Icon for menu button -->
+          </div>
+        </div>
+
+        <!-- Navigation links for different sections of the website -->
+        <ul class="nav__links" id="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#rent">Rent</a></li>
+          <li><a href="#ride">Ride</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <!-- Call-to-action button in the navigation bar -->
+        <div class="nav__btn">
+          <button class="btn">Get Started</button> <!-- Button to get started -->
+        </div>
+      </nav>
+
+      <!-- Main header container that contains introduction content -->
+      <div class="header__container" id="home">
+        <h1>PREMIUM CAR RENTAL</h1> <!-- Main heading of the page -->
+
+        <!-- Search form for car rental -->
+        <form action="/">
+          <!-- Input for location -->
+          <div class="input__group">
+            <label for="location">Pick up & Return location</label>
+            <input
+              type="text"
+              name="location"
+              id="location"
+              placeholder="Delhi, India"
+            />
+          </div>
+          
+          <!-- Input for rental start date -->
+          <div class="input__group">
+            <label for="start">Start</label>
+            <input
+              type="text"
+              name="start"
+              id="start"
+              placeholder="Nov 29, 10:00 AM"
+            />
+          </div>
+          
+          <!-- Input for rental end date -->
+          <div class="input__group">
+            <label for="stop">Stop</label>
+            <input
+              type="text"
+              name="stop"
+              id="stop"
+              placeholder="Nov 30, 10:00 PM"
+            />
+          </div>
+          
+          <!-- Search button for the form -->
+          <button class="btn">
+            <i class="ri-search-line"></i> <!-- Search icon inside the button -->
+          </button>
+        </form>
+        
+        <!-- Image shown in the header section -->
+        <img src="assets/header.png" alt="header" />
+      </div>
+
+      <!-- Link to scroll down to the next section -->
+      <a href="#about" class="scroll__down">
+        <i class="ri-arrow-down-line"></i> <!-- Down arrow icon -->
+      </a>
+    </header>
+
+    <!-- Section showcasing different types of vehicles available for rental -->
+    <section class="section__container range__container" id="about">
+      <h2 class="section__header">WIDE RANGE OF VEHICLES</h2>
+      <!-- Grid layout for different vehicle categories -->
+      <div class="range__grid">
+        <!-- Individual card for the "Cars" category -->
+        <div class="range__card">
+          <img src="assets/range--1.jpg" alt="range" />
+          <div class="range__details">
+            <h4>CARS</h4> <!-- Label for the vehicle category -->
+            <a href="#"><i class="ri-arrow-right-line"></i></a> <!-- Link to more details -->
+          </div>
+        </div>
+        
+        <!-- Repeat structure for different vehicle types (SUVs, Vans, Electric) -->
+        <div class="range__card">
+          <img src="assets/range--2.jpg" alt="range" />
+          <div class="range__details">
+            <h4>SUVS</h4>
+            <a href="#"><i class="ri-arrow-right-line"></i></a>
+          </div>
+        </div>
+
+        <div class="range__card">
+          <img src="assets/range--3.webp" alt="range" />
+          <div class="range__details">
+            <h4>VANS</h4>
+            <a href="#"><i class="ri-arrow-right-line"></i></a>
+          </div>
+        </div>
+
+        <div class="range__card">
+          <img src="assets/range-4.jpg" alt="range" />
+          <div class="range__details">
+            <h4>ELECTRIC</h4>
+            <a href="#"><i class="ri-arrow-right-line"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section to find a car in specific locations -->
+    <section class="section__container location__container" id="rent">
+      <!-- Image of location -->
+      <div class="location__image">
+        <img src="assets/location.png" alt="location" />
+      </div>
+
+      <!-- Information about renting cars by location -->
+      <div class="location__content">
+        <h2 class="section__header">FIND CAR IN YOUR LOCATIONS</h2>
+        <p>
+          Discover the perfect vehicle tailored to your needs, wherever you are.
+          Our 'Find Car in Your Locations' feature allows you to effortlessly
+          search and select from our premium fleet available near you.
+        </p>
+        
+        <!-- Button to trigger car search by location -->
+        <div class="location__btn">
+          <button class="btn">Find a Location</button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Car selection section with slider functionality -->
+    <section class="select__container" id="ride">
+      <h2 class="section__header">PICK YOUR DREAM CAR TODAY</h2>
+      
+      <!-- Swiper container for the car slider -->
+      <div class="swiper">
+        <!-- Wrapper for multiple slides -->
+        <div class="swiper-wrapper">
+          <!-- Slide 1: Car details -->
+          <div class="swiper-slide">
+            <div class="select__card">
+              <img src="assets/select--1.png" alt="select" />
+              <div class="select__info">
+                <!-- Information about the car (speed, seats, mileage) -->
+                <div class="select__info__card">
+                  <span><i class="ri-speed-up-line"></i></span>
+                  <h4>200 <span>km/h</span></h4>
+                </div>
+                <div class="select__info__card">
+                  <span><i class="ri-settings-5-line"></i></span>
+                  <h4>6 <span>speed</span></h4>
+                </div>
+                <div class="select__info__card">
+                  <span><i class="ri-roadster-line"></i></span>
+                  <h4>5 <span>seats</span></h4>
+                </div>
+                <div class="select__info__card">
+                  <span><i class="ri-signpost-line"></i></span>
+                  <h4>15 <span>milage</span></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Similar structure for other cars -->
+          <div class="swiper-slide">
+            <div class="select__card">
+              <img src="assets/select-2.png" alt="select" />
+              <div class="select__info">
+                <div class="select__info__card">
+                  <span><i class="ri-speed-up-line"></i></span>
+                  <h4>215 <span>km/h</span></h4>
+                </div>
+                <div class="select__info__card">
+                  <span><i class="ri-settings-5-line"></i></span>
+                  <h4>6 <span>speed</span></h4>
+                </div>
+                <div class="select__info__card">
+                  <span><i class="ri-roadster-line"></i></span>
+                  <h4>5 <span>seats</span></h4>
+                </div>
+                <div class="select__info__card">
+                  <span><i class="ri-signpost-line"></i></span>
+                  <h4>16 <span>milage</span></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="select__card">
+              <img src="assets/select-3.png" alt="select" />
+              <div class="select__info">
+                <div class="select__info__card">
+                  <span><i class="ri-speed-up-line"></i></span>
+                  <h4>306 <span>km/h</span></h4>
+                </div>
+                <div class="select__info__card">
+                  <span><i class="ri-settings-5-line"></i></span>
+                  <h4>6 <span>speed</span></h4>
+                </div>
+                <div class="select__info__card">
+                  <span><i class="ri-roadster-line"></i></span>
+                  <h4>5 <span>seats</span></h4>
+                </div>
+                <div class="select__info__card">
+                  <span><i class="ri-signpost-line"></i></span>
+                  <h4>12 <span>milage</span></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Additional car slides -->
+          <div class="swiper-slide">
+            <div class="select__card">
+              <img src="assets/select-4.png" alt="select" />
+              <div class="select__info">
+                <div class="select__info__card">
+                  <span><i class="ri-speed-up-line"></i></span>
+                  <h4>350 <span>km/h</span></h4>
+                </div>
+                <div class="select__info__card">
+                  <span><i class="ri-settings-5-line"></i></span>
+                  <h4>6 <span>speed</span></h4>
+                </div>
+                <div class="select__info__card">
+                  <span><i class="ri-roadster-line"></i></span>
+                  <h4>2 <span>seats</span></h4>
+                </div>
+                <div class="select__info__card">
+                  <span><i class="ri-signpost-line"></i></span>
+                  <h4>08 <span>milage</span></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="swiper-slide">
+            <div class="select__card">
+              <img src="assets/select-5.png" alt="select" />
+              <div class="select__info">
+                <div class="select__info__card">
+                  <span><i class="ri-speed-up-line"></i></span>
+                  <h4>254 <span>km/h</span></h4>
+                </div>
+                <div class="select__info__card">
+                  <span><i class="ri-settings-5-line"></i></span>
+                  <h4>6 <span>speed</span></h4>
+                </div>
+                <div class="select__info__card">
+                  <span><i class="ri-roadster-line"></i></span>
+                  <h4>5 <span>seats</span></h4>
+                </div>
+                <div class="select__info__card">
+                  <span><i class="ri-signpost-line"></i></span>
+                  <h4>10 <span>milage</span></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form for selecting a car and viewing details or renting -->
+      <form action="/" class="select__form">
+        <!-- Display the car price -->
+        <div class="select__price">
+          <span><i class="ri-price-tag-3-line"></i></span>
+          <div><span id="select-price">225</span> /day</div> <!-- Price per day -->
+        </div>
+        
+        <!-- Buttons to view details or rent the car -->
+        <div class="select__btns">
+          <button class="btn">View Details</button>
+          <button class="btn">Rent Now</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Stories section showing customer experiences -->
+    <section class="section__container story__container">
+      <h2 class="section__header">STORIES BEHIND THE WHEEL</h2>
+      <!-- Grid layout for different customer stories -->
+      <div class="story__grid">
+        <!-- Story 1 -->
+        <div class="story__card">
+          <div class="story__date">
+            <span>12</span>
+            <div>
+              <p>January</p>
+              <p>2024</p>
+            </div>
+          </div>
+          <h4>Adventures on the Open Road</h4>
+          <p>
+            Join us as we dive into the exhilarating stories of travelers who
+            embarked on unforgettable journeys with PREMIUM CAR RENTAL.
+          </p>
+          <img src="assets/story--1.jpeg" alt="story" />
+        </div>
+
+        <!-- Story 2 -->
+        <div class="story__card">
+          <div class="story__date">
+            <span>04</span>
+            <div>
+              <p>March</p>
+              <p>2024</p>
+            </div>
+          </div>
+          <h4>Luxury and Comfort: Experiences</h4>
+          <p>
+            In this series, we highlight the luxurious touches, unparalleled
+            comfort, and exceptional service that make every ride.
+          </p>
+          <img src="assets/story--2.jpeg" alt="story" />
+        </div>
+
+        <!-- Story 3 -->
+        <div class="story__card">
+          <div class="story__date">
+            <span>18</span>
+            <div>
+              <p>June</p>
+              <p>2024</p>
+            </div>
+          </div>
+          <h4>Cars that Adapt to Your Lifestyle</h4>
+          <p>
+            Read about how our versatile vehicles have seamlessly integrated
+            into the lives of professionals and families alike.
+          </p>
+          <img src="assets/story3.jpeg" alt="story" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Banner section showcasing additional promotions -->
+    <section class="banner__container">
+      <div class="banner__wrapper">
+        <!-- Banner images -->
+        <img src="assets/banner-1.png" alt="banner" />
+        <img src="assets/banner-2.png" alt="banner" />
+        <img src="assets/banner-3.png" alt="banner" />
+        <img src="assets/banner-4.png" alt="banner" />
+        <img src="assets/banner-5.png" alt="banner" />
+        <img src="assets/banner-6.png" alt="banner" />
+        <img src="assets/banner-7.png" alt="banner" />
+        <img src="assets/banner-8.png" alt="banner" />
+        <img src="assets/banner-9.png" alt="banner" />
+        <img src="assets/banner-10.png" alt="banner" />
+      </div>
+    </section>
+
+    <!-- Download section for the mobile app -->
+    <section class="download">
+      <div class="section__container download__container">
+        <div class="download__content">
+          <h2 class="section__header">PREMIUM CAR RENTAL</h2>
+          
+          <!-- Links to download the app from Apple Store and Google Play -->
+          <div class="download__links">
+            <a href="#">
+              <img src="assets/apple.png" alt="apple" />
+            </a>
+            <a href="#">
+              <img src="assets/google.png" alt="google" />
+            </a>
+          </div>
+        </div>
+        
+        <!-- Image of mobile app interface -->
+        <div class="download__image">
+          <img src="assets/download.png" alt="download" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter section for users to subscribe to updates -->
+    <section class="news" id="contact">
+      <div class="section__container news__container">
+        <h2 class="section__header">Stay up to date on all the latest news.</h2>
+        <form action="/">
+          <!-- Input for entering email address -->
+          <input type="text" placeholder="Your email" />
+          <button class="btn">
+            <i class="ri-send-plane-fill"></i> <!-- Send icon -->
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer section containing resource links and social media icons -->
+    <footer>
+      <div class="section__container footer__container">
+        <!-- Footer column for resources -->
+        <div class="footer__col">
+          <h4>Resources</h4>
+          <ul class="footer__links">
+            <li><a href="#">Installation Manual</a></li>
+            <li><a href="#">Release Note</a></li>
+            <li><a href="#">Community Help</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer column for company links -->
+        <div class="footer__col">
+          <h4>Company</h4>
+          <ul class="footer__links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Career</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer column for product information -->
+        <div class="footer__col">
+          <h4>Product</h4>
+          <ul class="footer__links">
+            <li><a href="#">Demo</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Features</a></li>
+          </ul>
+        </div>
+
+        <!-- Social media links -->
+        <div class="footer__col">
+          <h4>Follow Us</h4>
+          <ul class="footer__socials">
+            <li>
+              <a href="https://www.facebook.com/fayas.khan.56481?mibextid=ZbWKwL"><i class="ri-facebook-fill"></i></a>
+            </li>
+            <li>
+              <a href="https://x.com/Fayas789?t=FxsDPaN20Eub__e0ehy3RA&s=09"><i class="ri-twitter-fill"></i></a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/mohammadfayaskhan?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="ri-linkedin-fill"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer bar with copyright notice -->
+      <div class="footer__bar">
+        Copyright © 2024 Fayas. All rights reserved.
+      </div>
+    </footer>
+
+    <!-- JavaScript libraries for animations and car slider functionality -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Link to custom JavaScript file for interactive behavior -->
+    <script src="main.js"></script>
+    <script>
+      function login() {
+        // You can add validation logic here if needed
+        window.location.href = 'index.html'; // Redirect to index.html
+      }
+    </script>
+  </body>
+</html>

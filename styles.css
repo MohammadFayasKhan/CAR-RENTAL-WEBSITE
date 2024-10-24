@@ -1,0 +1,917 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syncopate:wght@400;700&display=swap");
+
+/* Define CSS variables for reusability throughout the stylesheet */
+:root {
+  --primary-color: #77f554; /* Main theme color */
+  --primary-color-dark: #58d64a; /* Darker shade of the primary color */
+  --text-dark: #15191d; /* Dark text color */
+  --text-light: #737373; /* Lighter text color */
+  --extra-light: #e5e5e5; /* Very light color */
+  --white: #ffffff; /* White color */
+  --max-width: 1200px; /* Maximum width of the content */
+  --header-font: "Syncopate", sans-serif; /* Font used for headers */
+}
+
+/* Global reset for padding, margin, and box-sizing */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Container for sections to ensure max width and padding */
+.section__container {
+  max-width: var(--max-width); /* Set the maximum width */
+  margin: auto; /* Center the section */
+  padding: 5rem 1rem; /* Add top, bottom, left, right padding */
+}
+
+/* Styling for section headers */
+.section__header {
+  font-size: 3.25rem;
+  font-weight: 700;
+  font-family: var(--header-font);
+  color: var(--text-dark); /* Dark color for headers */
+  letter-spacing: -5px; /* Reduce spacing between letters */
+  line-height: 4.25rem; /* Line height for readability */
+}
+
+/* Button styling with padding and transitions */
+.btn {
+  padding: 1rem 1.5rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--white); /* Button text color */
+  background-color: var(--text-dark); /* Button background color */
+  border-radius: 10px; /* Rounded corners */
+  transition: 0.3s; /* Smooth transition for hover */
+  cursor: pointer; /* Show pointer cursor on hover */
+}
+
+/* Change button colors on hover */
+.btn:hover {
+  color: var(--text-dark); /* Text changes to dark */
+  background-color: var(--primary-color); /* Background becomes primary color */
+}
+
+/* Styling for images to take full width */
+img {
+  display: flex;
+  width: 100%;
+}
+
+/* Remove underline from links and add transition */
+a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+/* Remove bullet points from lists */
+ul {
+  list-style: none;
+}
+
+/* Enable smooth scrolling for the entire page */
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+/* Set the default font family for the body */
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Header styling with background image */
+header {
+  position: relative;
+  background-image: url("assets/header-bg.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Navigation bar fixed at the top */
+nav {
+  position: fixed;
+  isolation: isolate;
+  width: 100%;
+  z-index: 9; /* Ensure it stays on top of other elements */
+}
+
+/* Navigation header styling for logo and menu button */
+.nav__header {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--primary-color); /* Background color for navbar */
+}
+
+/* Styling for the logo link */
+.nav__logo a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: var(--header-font);
+  color: var(--white); /* White logo text */
+  letter-spacing: -2px;
+}
+
+/* Menu button styling for mobile view */
+.nav__menu__btn {
+  font-size: 1.5rem;
+  color: var(--white);
+  cursor: pointer; /* Pointer cursor to indicate clickable button */
+}
+
+/* Styling for navigation links */
+.nav__links {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: var(--primary-color); /* Background color for menu */
+  transition: transform 0.5s; /* Smooth menu transition */
+  z-index: -1;
+}
+
+/* Show the menu when it has the 'open' class */
+.nav__links.open {
+  transform: translateY(100%); /* Menu slides in */
+}
+
+/* Navigation link styling */
+.nav__links a {
+  font-weight: 500;
+  color: var(--white); /* White link text */
+}
+
+/* Change link color on hover */
+.nav__links a:hover {
+  color: var(--text-dark); /* Dark color on hover */
+}
+
+/* Hide navigation button (menu) by default */
+.nav__btn {
+  display: none;
+}
+
+/* Header container for the main heading and form */
+.header__container {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 5rem 1rem;
+}
+
+/* Styling for the main heading */
+.header__container h1 {
+  max-width: 750px;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+  font-size: 4.5rem;
+  font-weight: 700;
+  font-family: var(--header-font);
+  color: var(--text-dark);
+  letter-spacing: -5px;
+  line-height: 5rem;
+  text-align: center;
+}
+
+/* Form styling inside the header */
+.header__container form {
+  max-width: 800px;
+  margin-inline: auto;
+  margin-bottom: 4rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background-color: var(--white); /* White background for form */
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+/* Styling for each input group within the form */
+.header__container .input__group {
+  flex: 1 0 170px; /* Flexible layout */
+  display: grid;
+  gap: 10px;
+}
+
+/* Label styling within the form */
+.header__container label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* Input field styling */
+.header__container input {
+  width: 100%;
+  outline: none;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--text-light);
+}
+
+/* Placeholder styling for the input */
+.header__container input::placeholder {
+  color: var(--text-light);
+}
+
+/* Button styling for the form button */
+.header__container .btn {
+  padding: 15px 17px;
+  font-size: 1.5rem;
+}
+
+/* Image styling within the header */
+.header__container img {
+  max-width: 1050px;
+  margin-inline: auto;
+  filter: drop-shadow(5px 20px 20px rgba(0, 0, 0, 0.5)); /* Drop shadow for depth */
+}
+
+/* Decorative element behind the header */
+.header__container::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 50%;
+  background-color: var(--primary-color); /* Add a background shape */
+  transform: translateY(50%) skewY(-4deg); /* Tilt effect */
+  z-index: -1;
+}
+
+/* Scroll down button styling */
+.scroll__down {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  font-size: 1.5rem;
+  padding: 8px 5px;
+  color: var(--text-dark);
+  background-color: var(--primary-color);
+  border-radius: 2rem;
+  border: 8px solid var(--white);
+}
+
+/* Styling for the range of vehicles section */
+.range__container .section__header {
+  max-width: 700px;
+  margin-inline: auto;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+/* Grid layout for vehicle cards */
+.range__grid {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Card styling for each vehicle category */
+.range__card {
+  position: relative;
+  isolation: isolate;
+  max-width: 600px;
+  margin-inline: auto;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Vehicle image styling with hover effect */
+.range__card img {
+  transition: 0.3s;
+}
+
+/* Zoom-in effect when hovering on a vehicle card */
+.range__card:hover img {
+  transform: scale(1.1);
+}
+
+/* Styling for the details section on each vehicle card */
+.range__details {
+  position: absolute;
+  inset: 0;
+  padding: 2rem;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0.75)
+  );
+}
+
+/* Title styling for vehicle categories */
+.range__details h4 {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  font-weight: 600;
+  font-family: var(--header-font);
+  color: var(--white);
+}
+
+/* Link styling within the vehicle card */
+.range__details a {
+  display: inline-block;
+  padding: 0px 6px;
+  font-size: 1.5rem;
+  color: var(--white);
+  border: 2px solid var(--white);
+  border-radius: 100%;
+}
+
+/* Change link color on hover */
+.range__details a:hover {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* Container for the location section with grid layout */
+.location__container {
+  display: grid;
+  gap: 2rem 0;
+  overflow: hidden;
+}
+
+/* Image styling in the location section */
+.location__image img {
+  max-width: 500px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+/* Header styling for the location content */
+.location__content .section__header {
+  margin-bottom: 2rem;
+}
+
+/* Paragraph text styling in the location section */
+.location__content p {
+  margin-bottom: 2rem;
+  color: var(--text-light);
+}
+
+/* Container for the car selection section with background image */
+.select__container {
+  padding-top: 5rem;
+  margin-bottom: 5rem;
+  background-image: url("assets/select-bg.png");
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Section header styling for the car selection section */
+.select__container .section__header {
+  max-width: 600px;
+  margin-inline: auto;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+/* Styling for Swiper slider */
+.swiper {
+  width: 100%;
+}
+
+/* Styling for each slide in Swiper */
+.swiper-slide {
+  max-width: 900px;
+}
+
+/* Image styling for each car selection card */
+.select__card img {
+  max-width: 800px;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+  filter: drop-shadow(0px 20px 20px rgba(0, 0, 0, 0.5)); /* Add drop-shadow for depth */
+}
+
+/* Hidden info section in the car selection cards */
+.select__info {
+  max-width: 600px;
+  margin-inline: auto;
+  display: none; /* Hidden by default */
+  align-items: center;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+/* Show info when '.show__info' class is applied */
+.select__card.show__info .select__info {
+  display: flex;
+}
+
+/* Info card styling within the car selection */
+.select__info__card {
+  text-align: center;
+}
+
+/* Icon styling in each info card */
+.select__info__card > span {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 5px 15px;
+  font-size: 2.5rem;
+  color: var(--text-dark);
+  background-color: var(--white);
+  border-radius: 100%; /* Circular icon background */
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the car information text */
+.select__info__card h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-family: var(--header-font);
+  color: var(--text-dark);
+}
+
+/* Styling for the text units (e.g. 'km/h', 'seats') */
+.select__info__card h4 span {
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+/* Form styling in the car selection section */
+.select__form {
+  max-width: 750px;
+  margin-inline: auto;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  background-color: var(--white); /* White background for the form */
+  transform: translateY(50%);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Pricing display styling */
+.select__price {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-family: var(--header-font);
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+/* Price text styling */
+.select__price span {
+  font-size: 3rem;
+  line-height: 3rem;
+  color: var(--text-dark);
+}
+
+/* Styling for buttons in the car selection section */
+.select__btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+/* Ensure buttons have a minimum width */
+.select__btns .btn {
+  min-width: 135px;
+}
+
+/* Additional styling for the second button */
+.select__btns .btn:nth-child(2) {
+  color: var(--white);
+  background-color: var(--primary-color);
+}
+
+/* Styling for the customer stories section */
+.story__container .section__header {
+  max-width: 600px;
+  margin-inline: auto;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+/* Grid layout for story cards */
+.story__grid {
+  display: grid;
+  gap: 4rem 1rem;
+}
+
+/* Date styling for the story card */
+.story__date {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 2px solid var(--text-light);
+}
+
+/* Styling for the date element */
+.story__date span {
+  padding-right: 10px;
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+  border-right: 2px solid var(--text-light);
+}
+
+/* Styling for the text next to the date */
+.story__date div p {
+  margin-bottom: 0;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+/* Title styling for each story card */
+.story__card h4 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-family: var(--header-font);
+  font-weight: 700;
+  letter-spacing: -2px;
+  line-height: 2rem;
+  color: var(--text-dark);
+}
+
+/* Text styling for the story card content */
+.story__card p {
+  margin-bottom: 2rem;
+  color: var(--text-light);
+}
+
+/* Container for the banner section with padding */
+.banner__container {
+  padding-block: 5rem;
+  overflow: hidden;
+}
+
+/* Wrapper for the banner images with horizontal scrolling */
+.banner__wrapper {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 8rem;
+
+  /* Animation for continuous scrolling */
+  animation: scroll 45s linear infinite;
+}
+
+/* Image styling for each banner */
+.banner__wrapper img {
+  height: 100px;
+}
+
+/* Keyframe for the scrolling animation */
+@keyframes scroll {
+  to {
+    transform: translateX(calc(-50% - 4rem));
+  }
+}
+
+/* Download section styling */
+.download {
+  position: relative;
+  isolation: isolate;
+  padding-inline: 1rem;
+  overflow: hidden;
+}
+
+/* Decorative background shape in the download section */
+.download::before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: calc(50% - 5rem);
+  background-color: var(--text-dark);
+  z-index: -1;
+}
+
+/* Container for the download section content */
+.download__container {
+  padding: 0 1rem;
+  display: grid;
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+}
+
+/* Styling for the content in the download section */
+.download__content {
+  padding-block: 5rem;
+}
+
+/* Header styling for the download section */
+.download__content .section__header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Layout for download buttons (Apple and Google) */
+.download__links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Image styling for the download buttons */
+.download__links img {
+  max-width: 150px;
+}
+
+/* Hide download image by default */
+.download__image {
+  display: none;
+}
+
+/* Newsletter section styling */
+.news {
+  background-color: var(--text-dark);
+}
+
+/* Container for the newsletter section */
+.news__container {
+  padding-bottom: 0;
+  display: grid;
+  gap: 2rem;
+}
+
+/* Header styling for the newsletter section */
+.news__container .section__header {
+  font-size: 2.5rem;
+  line-height: 3.25rem;
+  letter-spacing: -2px;
+  color: var(--white);
+  text-align: center;
+}
+
+/* Form styling within the newsletter section */
+.news__container form {
+  width: 100%;
+  max-width: 450px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Input field styling within the newsletter form */
+.news__container input {
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 0.75rem 0;
+  font-size: 1rem;
+  color: var(--white); /* White text */
+  background-color: transparent;
+  border-bottom: 2px solid var(--text-light); /* Light border */
+}
+
+/* Styling for the newsletter submit button */
+.news__container .btn {
+  padding: 10p 12px;
+  font-size: 1.5rem;
+  background-color: var(--primary-color);
+}
+
+/* Footer styling */
+footer {
+  background-color: var(--text-dark);
+}
+
+/* Footer container grid layout */
+.footer__container {
+  display: grid;
+  gap: 4rem 2rem;
+  border-bottom: 1px solid var(--text-light);
+}
+
+/* Footer column header styling */
+.footer__col h4 {
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  font-family: var(--header-font);
+  color: var(--white); /* White footer heading text */
+}
+
+/* Footer links layout */
+.footer__links {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Footer link styling */
+.footer__links a {
+  color: var(--text-light); /* Light text color */
+}
+
+/* Footer link hover effect */
+.footer__links a:hover {
+  color: var(--white); /* White color on hover */
+}
+
+/* Social media icons layout */
+.footer__socials {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Social media link styling */
+.footer__socials a {
+  padding: 8px 12px;
+  font-size: 1.25rem;
+  color: var(--text-light); /* Light text color */
+  border: 2px solid var(--text-light); /* Light border */
+  border-radius: 100%; /* Circular social media icons */
+}
+
+/* Social media link hover effect */
+.footer__socials a:hover {
+  color: var(--primary-color); /* Primary color on hover */
+  border-color: var(--primary-color); /* Primary border on hover */
+}
+
+/* Footer copyright text styling */
+.footer__bar {
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-light); /* Light text color */
+  text-align: center;
+}
+
+/* Responsive media query for screens wider than 540px */
+@media (width > 540px) {
+  .story__grid {
+    grid-template-columns: repeat(2, 1fr); /* Two-column layout for stories */
+  }
+
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr); /* Two-column layout for footer */
+  }
+}
+
+/* Responsive media query for screens wider than 768px */
+@media (width > 768px) {
+  nav {
+    position: static;
+    padding: 2rem 1rem 0;
+    max-width: var(--max-width);
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .nav__header {
+    flex: 1;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .nav__logo a {
+    color: var(--text-dark); /* Dark color for the logo */
+  }
+
+  .nav__menu__btn {
+    display: none; /* Hide the menu button on larger screens */
+  }
+
+  .nav__links {
+    position: static;
+    padding: 0;
+    width: fit-content;
+    flex-direction: row; /* Horizontal menu layout */
+    background-color: transparent;
+    transform: none;
+  }
+
+  .nav__links a {
+    color: var(--text-dark); /* Dark text color for links */
+  }
+
+  .nav__links a:hover {
+    color: var(--primary-color); /* Primary color on hover */
+  }
+
+  .nav__btn {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .nav__btn .btn {
+    color: var(--text-dark); /* Dark text color for button */
+    background-color: var(--primary-color); /* Primary background color */
+  }
+
+  .range__grid {
+    grid-template-columns: repeat(2, 1fr); /* Two-column layout for vehicle range */
+  }
+
+  .location__container {
+    grid-template-columns: repeat(2, 1fr); /* Two-column layout for location section */
+    align-items: center;
+  }
+
+  .location__image {
+    grid-area: 1/2/2/3; /* Image alignment for location section */
+  }
+
+  .select__form {
+    justify-content: space-between;
+  }
+
+  .story__grid {
+    grid-template-columns: repeat(3, 1fr); /* Three-column layout for stories */
+  }
+
+  .download__container {
+    margin-top: 10rem;
+    grid-template-columns: repeat(2, 1fr); /* Two-column layout for download section */
+    align-items: center;
+  }
+
+  .download__content {
+    max-width: 500px;
+    margin-left: auto;
+  }
+
+  .download__content .section__header {
+    text-align: left;
+  }
+
+  .download__links {
+    justify-content: flex-start;
+  }
+
+  .download__image {
+    display: flex;
+    position: relative;
+    isolation: isolate;
+    height: 100%;
+  }
+
+  .download__image img {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 400px;
+  }
+
+  .news__container {
+    grid-template-columns: repeat(2, 1fr); /* Two-column layout for newsletter */
+    align-items: center;
+  }
+
+  .news__container .section__header {
+    text-align: left;
+  }
+
+  .news__container form {
+    margin-inline-end: unset;
+  }
+
+  .footer__container {
+    grid-template-columns: repeat(4, 1fr); /* Four-column layout for footer */
+  }
+}
+
+/* Responsive media query for screens wider than 1024px */
+@media (width > 1024px) {
+  .range__grid {
+    gap: 1.5rem; /* Increased gap between vehicle range cards */
+  }
+
+  .range__details {
+    padding: 4rem;
+  }
+
+  .story__grid {
+    padding: 1.5rem;
+  }
+}
